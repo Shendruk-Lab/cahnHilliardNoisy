@@ -59,7 +59,7 @@ class numericalSolver:
         self.L = L
         self.dt = dt
         self.dx = dx
-        self.sqkbt = sqrt(2.0*kbt)                    # Thermal energy factor
+        self.sqkbt = sqrt(2.0*kbt*dt)                 # Thermal energy factor
         self.W2 = 1.0/(dx*dx)                         # Interface width squared
         self.phi = initalizeRand(avPhi,L)             # Phase field
         self.mu = empty(shape=(L,L),dtype=float)      # Chemical potential
@@ -71,7 +71,6 @@ class numericalSolver:
     def update(self):
         self.calcMu()
         self.noise = noisyField(self.L)
-        self.phi = self.phi + self.dt * ( laplacian(self.mu)+self.sqkbt*divergence(self.noise) )  # Update the phase field
-        self.phi = self.phi + self.dt * ( laplacian(self.mu) )  # Update the phase field
+        self.phi = self.phi + self.dt * laplacian(self.mu) + self.sqkbt*divergence(self.noise)  # Update the phase field
     def avPhi(self):
         return mean(self.phi)

@@ -1,5 +1,6 @@
 # Cahn-Hilliard Equation Solver
 **Euler, central-difference (applied twice sequentially) 2D Cahn-Hilliard equation solver.**
+**Euler–Maruyama method for the noise.**
 
 Python scripts for numerically solving the Cahn-Hilliard equation in 2-dimensions with noise. 
 The noisy Cahn-Hilliard equation is

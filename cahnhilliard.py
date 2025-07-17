@@ -55,4 +55,4 @@ for t in range(1,int(T/dt)+1):
     solver.update()
     if(t%ch.showRate==0):
         ch.showframe(solver.phi,L,ax,im)
-        print(solver.avPhi(),phi0)
+        # print(solver.avPhi(),phi0)
