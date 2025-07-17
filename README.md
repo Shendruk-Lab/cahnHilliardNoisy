@@ -1,8 +1,11 @@
 # Cahn-Hilliard Equation Solver
 **Euler, central-difference (applied twice sequentially) 2D Cahn-Hilliard equation solver.**
 
-Python scripts for numerically solving the cahn-hilliard equation in 2-dimensions. 
-Non-dimensionalized in space by spatial step size and time by mobility*freeEn/(step size)^2. 
+Python scripts for numerically solving the Cahn-Hilliard equation in 2-dimensions with noise. 
+The noisy Cahn-Hilliard equation is
+$$\partial_t \phi = M\nabla^2 \mu + \sqrt{ 2k_\text{B}T M } \nabla\cdot\eta , $$
+where the chemical potential is $a\phi(\phi^2-1) - k\nabla^2\phi$. 
+Non-dimensionalized in space by spatial step size $\Delta x$ (and interface width $\sqrt{k/a}$) and time by $M a/\Delta x^2$. 
 Initialized randomly. 
 
 ## diffEq_helper.py
@@ -15,6 +18,7 @@ This script numerically solves the diffusion equation and makes a movie of it.
 - `t`, `timestep`, Time step. Float. Default=0.01
 - `T`, `duration`, Simulation duration or total time (in simulation units). Float. Default=1000.0
 - `x`, `spacestep`, Spatial step (in sim units of characteristic interface width). Float. Default=1.0
+- `kbt`, `temperature`, Thermal energy (in sim units). Float. Default=1.0
 - `a`, `avPhi`, Average phase (phi). Float. Default=0.0
 
 ### Ouput:
