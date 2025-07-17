@@ -15,9 +15,9 @@ import shendrukGroupFormat as ed
 parser = argparse.ArgumentParser(description='Euler, central-difference d-dimensional diffusion equation solver.')
 parser.add_argument("-x", "--spacestep", type=float, help="Spatial step (in simulation units of interface width).",default=1.0)
 parser.add_argument("-l", "--size", type=float, help="System size (length=L; in simulation units)",default=50)
-parser.add_argument("-t", "--timestep", type=float, help="Time step",default=0.01)
+parser.add_argument("-t", "--timestep", type=float, help="Time step (in simulation units)",default=0.01)
 parser.add_argument("-T", "--duration", type=float, help="Simulation time (in simulation units)",default=1000)
-parser.add_argument("-kbt", "--temperature", type=float, help="Thermal energy",default=1)
+parser.add_argument("-kbt", "--temperature", type=float, help="Thermal energy",default=0.0)
 parser.add_argument("-av", "--phi0", type=float, help="Average phase (phi0).",default=0.0)
 args = parser.parse_args()
 

@@ -19,7 +19,7 @@ This script numerically solves the diffusion equation and makes a movie of it.
 - `t`, `timestep`, Time step. Float. Default=0.01
 - `T`, `duration`, Simulation duration or total time (in simulation units). Float. Default=1000.0
 - `x`, `spacestep`, Spatial step (in sim units of characteristic interface width). Float. Default=1.0
-- `kbt`, `temperature`, Thermal energy (in sim units). Float. Default=1.0
+- `kbt`, `temperature`, Thermal energy (in sim units). Float. Default=0
 - `a`, `avPhi`, Average phase (phi). Float. Default=0.0
 
 ### Ouput:
