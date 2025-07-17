@@ -6,8 +6,8 @@ Python scripts for numerically solving the Cahn-Hilliard equation in 2-dimension
 The noisy Cahn-Hilliard equation is
 $$\partial_t \phi = M\nabla^2 \mu + \sqrt{ 2k_\text{B}T M } \nabla\cdot\eta , $$
 where the chemical potential is $\mu = a\phi(\phi^2-1) - k\nabla^2\phi$. 
-Non-dimensionalized in space by interface width $\sqrt{k/a}$ and time by $M a/\Delta x^2$. 
-This means mobility $M=1$ and bulk free energy $a=1$ are set to unity. 
+Non-dimensionalized in space by interface width $\sqrt{k/a}$ and time by $k/(M a^2)$. 
+This means mobility $M=1$, surface tension $k=1$ and bulk free energy $a=1$ are set to unity. 
 Initialized randomly. 
 
 ## diffEq_helper.py
@@ -29,5 +29,5 @@ This script numerically solves the diffusion equation and makes a movie of it.
 - `cahnhilliard_helper.py`
 ### Command line example:
 ```
-python3 cahnhilliard.py -l 100 -t 0.01 -T 10000 -a 0.0 -w 2.0
+python3 cahnhilliard.py -T 10000 -l 100 -av 0.0 -t 0.002 -x 1  -kbt 0.1
 ```
