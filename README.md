@@ -4,8 +4,9 @@
 Python scripts for numerically solving the Cahn-Hilliard equation in 2-dimensions with noise. 
 The noisy Cahn-Hilliard equation is
 $$\partial_t \phi = M\nabla^2 \mu + \sqrt{ 2k_\text{B}T M } \nabla\cdot\eta , $$
-where the chemical potential is $a\phi(\phi^2-1) - k\nabla^2\phi$. 
-Non-dimensionalized in space by spatial step size $\Delta x$ (and interface width $\sqrt{k/a}$) and time by $M a/\Delta x^2$. 
+where the chemical potential is $\mu = a\phi(\phi^2-1) - k\nabla^2\phi$. 
+Non-dimensionalized in space by interface width $\sqrt{k/a}$ and time by $M a/\Delta x^2$. 
+This means mobility $M=1$ and bulk free energy $a=1$ are set to unity. 
 Initialized randomly. 
 
 ## diffEq_helper.py
